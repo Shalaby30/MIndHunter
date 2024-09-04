@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    color: white;
+    background-color: black;
+}
+
+.Head:after {
+    content: "";
+    height: 70%;
+    left: 0.75rem;
+    position: absolute;
+    top: 15%;
+    width: 2px;
+}
+
+.Layer {
+    @apply opacity-0 hover:opacity-100 transition-all duration-500 top-0 left-0 right-0 bottom-0  p-3   absolute  bg-gradient-to-t from-black via-transparent to-black;
+}
