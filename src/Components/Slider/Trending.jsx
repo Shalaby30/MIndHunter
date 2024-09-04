@@ -10,10 +10,16 @@ export default function TrendingSlider() {
   async function fetchTrending() {
     try {
       const { data } = await axios.get(
-        "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1"
+        "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
+        {
+          headers: {
+            accept: "application/json",
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZWNhNDNmZDQwYmIyMTc0YjBlYmY3ODI1MzBkNjZhYyIsIm5iZiI6MTcyNTM4ODg1OC40NjY1NjYsInN1YiI6IjY2YWM0ZGU1YzQ0ZDZjMjAzZDYzMWE3ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.PUiqDxRUk7aB9BTN_tsnkJj3c-4TbZHJ59UaYIGgRHk",
+          },
+        }
       );
       setTvShows(data.results);
-      
     } catch (error) {
       console.log(error);
     }
